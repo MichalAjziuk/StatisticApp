@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "14397059055",
+    "firebase_url": "https://statassistant-32e93.firebaseio.com",
+    "project_id": "statassistant-32e93",
+    "storage_bucket": "statassistant-32e93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14397059055:android:8d064dbae86d3c13d9d01a",
+        "android_client_info": {
+          "package_name": "com.example.statisticapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14397059055-02kqev5qbhrbrc2fckhekb8v5dl2ue4d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn8b8WbWmqGIQhRVDHmj2hzIZWuo11RjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "14397059055-02kqev5qbhrbrc2fckhekb8v5dl2ue4d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
