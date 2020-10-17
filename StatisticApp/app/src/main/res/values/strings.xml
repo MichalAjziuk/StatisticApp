@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">StatisticApp</string>
+    <string-array name="teams">
+        <item>Lakers</item>
+        <item>Heat</item>
+        <item>Celtics</item>
+        <item>Clippers</item>
+        <item>Magic</item>
+        <item>Rockets</item>
+        <item>Hornets</item>
+    </string-array>
 </resources>
