@@ -1,6 +1,5 @@
 package com.example.statisticapp;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,24 +15,17 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
 
 public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private FirebaseAuth mAuth;
     private EditText mEmail, mPassword;
     private Spinner mTeam;
     private RadioGroup mRadioGroup;
     private RadioButton mRadioButton;
-    private Button mSignUpButton, mBackButton;
-    private String textTeam;
+    private Button mSignUpButton, mBackButton, mDeleteDB;
+    private String txtTeam;
+    private User user;
+    private DatabaseHelper databaseHelper = new DatabaseHelper(SignUp.this);
 
 
     @Override
@@ -41,7 +33,6 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        mAuth = FirebaseAuth.getInstance();
         mPassword = findViewById(R.id.password);
         mEmail = findViewById(R.id.email);
 
@@ -61,14 +52,22 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
                 String txtPassword = mPassword.getText().toString();
                 int radioId = mRadioGroup.getCheckedRadioButtonId();
                 mRadioButton = findViewById(radioId);
-                String role = (String) mRadioButton.getText();
+                String txtRole = (String) mRadioButton.getText();
+                Boolean checkEmail = databaseHelper.checkEmail(txtEmail);
 
                 if(TextUtils.isEmpty(txtEmail) || TextUtils.isEmpty(txtPassword)){
                     Toast.makeText(SignUp.this, "Empty credentials!", Toast.LENGTH_SHORT).show();
-                } else if (txtPassword.length() < 6){
+                } else if (txtPassword.length() < 6) {
                     Toast.makeText(SignUp.this, "Password too short!", Toast.LENGTH_SHORT).show();
+                } else if (!checkEmail) {
+                    Toast.makeText(SignUp.this, "This email exist in database, write different ", Toast.LENGTH_SHORT).show();
                 } else {
-                    registerUser(txtEmail , txtPassword, textTeam, role);
+                    user = new User(txtEmail,txtPassword,txtTeam,txtRole);
+                    databaseHelper.addUser(user);
+                    Toast.makeText(SignUp.this, "Success registration", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SignUp.this, SignIn.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
         });
@@ -83,33 +82,20 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
             }
         });
 
-    }
-
-    private void registerUser(final String email, final String password, final String team, final String role){
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
+        mDeleteDB = findViewById(R.id.deleteDB);
+        mDeleteDB.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    String uid = mAuth.getCurrentUser().getUid();
-                    HashMap<String, Object> map = new HashMap<>();
-                    map.put("Email",email);
-                    map.put("Password",password);
-                    map.put("Team",team);
-                    map.put("Role",role);
-                    FirebaseDatabase.getInstance().getReference("Users").child(uid).setValue(map);
-                    Toast.makeText(SignUp.this, "Registration completed !", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(SignUp.this, SignIn.class));
-                    finish();
-                } else {
-                    Toast.makeText(SignUp.this, "Registration failed ", Toast.LENGTH_SHORT).show();
-                }
+            public void onClick(View view) {
+                databaseHelper.dropTable();
             }
         });
+
     }
+
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-        textTeam = adapterView.getItemAtPosition(position).toString();
+        txtTeam = adapterView.getItemAtPosition(position).toString();
     }
 
     @Override

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPlayer">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Player"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"/>
+
+    <ScrollView
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/block"
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="30dp"
+                android:text="Name: "
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/edit_text_block"
+                android:paddingLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Surname: "
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/surname"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/edit_text_block"
+                android:paddingLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Age: "
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/edit_text_block"
+                android:paddingLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Date of birth: "
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/dateofbirth"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/edit_text_block"
+                android:paddingLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Country: "
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/country"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/edit_text_block"
+                android:paddingLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Height: "
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/height"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/edit_text_block"
+                android:paddingLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Weight: "
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/weight"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/edit_text_block"
+                android:paddingLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Team: "
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/team"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/edit_text_block"
+                android:paddingLeft="10dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="230dp"
+        android:layout_marginLeft="105dp"
+        android:text="Submit"
+        android:background="@drawable/block"
+        />
+
+    <Button
+        android:id="@+id/backAddPlayer"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="230dp"
+        android:layout_marginLeft="11dp"
+        android:text="BACK"
+        android:background="@drawable/block"
+        />
+
+</FrameLayout>

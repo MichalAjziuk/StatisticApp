@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CoachPanel"></activity>
+        <activity android:name=".ListOfMatches"></activity>
+        <activity android:name=".ListOfPlayers" />
+        <activity android:name=".EditPlayer" />
+        <activity android:name=".AddPlayerStats" />
+        <activity android:name=".AddMatch" />
+        <activity android:name=".AddTraining" />
+        <activity android:name=".AddPlayerProgress" />
+        <activity android:name=".AddPlayer" />
+        <activity android:name=".CoachPanel" />
         <activity android:name=".AssistantPanel" />
         <activity android:name=".SignUp" />
         <activity android:name=".SignIn" />
