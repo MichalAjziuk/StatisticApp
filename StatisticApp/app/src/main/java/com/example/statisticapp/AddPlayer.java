@@ -52,6 +52,14 @@ public class AddPlayer extends AppCompatActivity {
                     Player player = new Player(txtName,txtSurname,txtAge,txtDateOfBirth,txtCountry,txtHeight,txtWeight,txtTeam);
                     databaseHelper.addPlayer(player);
                     Toast.makeText(AddPlayer.this, "You add a player to database", Toast.LENGTH_SHORT).show();
+                    pName.getText().clear();
+                    pSurname.getText().clear();
+                    pAge.getText().clear();
+                    pDateOfBirth.getText().clear();
+                    pCountry.getText().clear();
+                    pHeight.getText().clear();
+                    pWeight.getText().clear();
+                    pTeam.getText().clear();
                 }
             }
         });

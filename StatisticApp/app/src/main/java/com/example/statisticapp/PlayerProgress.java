@@ -9,7 +9,7 @@ public class PlayerProgress {
     private int speed;
     private int jumping;
     private int musculature;
-    private String Satisfaction;
+    private String satisfaction;
 
     PlayerProgress () {}
 
@@ -22,7 +22,7 @@ public class PlayerProgress {
         this.speed = speed;
         this.jumping = jumping;
         this.musculature = musculature;
-        Satisfaction = satisfaction;
+        this.satisfaction = satisfaction;
     }
 
     public int getPlayerId() {
@@ -90,10 +90,10 @@ public class PlayerProgress {
     }
 
     public String getSatisfaction() {
-        return Satisfaction;
+        return satisfaction;
     }
 
     public void setSatisfaction(String satisfaction) {
-        Satisfaction = satisfaction;
+        satisfaction = satisfaction;
     }
 }

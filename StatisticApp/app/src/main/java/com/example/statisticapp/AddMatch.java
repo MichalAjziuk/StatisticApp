@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class AddMatch extends AppCompatActivity {
 
-    private EditText mDateOfMatch, mTm1S, mTm2S, mQT1TM1, mQT2TM1, mQT3TM1, mQT4TM1, mQT1TM2,
+    private EditText mNameTM1, mNameTM2, mDateOfMatch, mTm1S, mTm2S, mQT1TM1, mQT2TM1, mQT3TM1, mQT4TM1, mQT1TM2,
             mQT2TM2, mQT3TM2, mQT4TM2, mOvertime, mBPTM1, mBPTM2;
     private Button mBack, mSubmit;
 
@@ -24,6 +24,8 @@ public class AddMatch extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_match);
 
+        mNameTM1 = findViewById(R.id.nameTeamOne);
+        mNameTM2 = findViewById(R.id.nameTeamTwo);
         mDateOfMatch = findViewById(R.id.dateofmatch);
         mTm1S = findViewById(R.id.teamOneScore);
         mTm2S = findViewById(R.id.teamTwoScore);
@@ -44,6 +46,8 @@ public class AddMatch extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DatabaseHelper databaseHelper = new DatabaseHelper(AddMatch.this);
+                String txtNameTM1 = mNameTM1.getText().toString();
+                String txtNameTM2 = mNameTM2.getText().toString();
                 String txtDateOfMatch = mDateOfMatch.getText().toString();
                 String valTm1S = mTm1S.getText().toString();
                 String valTm2S = mTm2S.getText().toString();
@@ -60,7 +64,7 @@ public class AddMatch extends AppCompatActivity {
                 String txtBPTM1 = mBPTM1.getText().toString();
                 String txtBPTM2 = mBPTM2.getText().toString();
 
-                if(TextUtils.isEmpty(txtDateOfMatch) || TextUtils.isEmpty(valTm1S) || TextUtils.isEmpty(valTm2S) || TextUtils.isEmpty(valQT1TM1) || TextUtils.isEmpty(valQT2TM1) ||
+                if(TextUtils.isEmpty(txtNameTM1) || TextUtils.isEmpty(txtNameTM2) ||TextUtils.isEmpty(txtDateOfMatch) || TextUtils.isEmpty(valTm1S) || TextUtils.isEmpty(valTm2S) || TextUtils.isEmpty(valQT1TM1) || TextUtils.isEmpty(valQT2TM1) ||
                         TextUtils.isEmpty(valQT3TM1) || TextUtils.isEmpty(valQT4TM1) || TextUtils.isEmpty(valQT1TM2) || TextUtils.isEmpty(valQT2TM2) || TextUtils.isEmpty(valQT3TM2) ||
                         TextUtils.isEmpty(valQT4TM2) || TextUtils.isEmpty(txtOvertime) || TextUtils.isEmpty(txtBPTM1) || TextUtils.isEmpty(txtBPTM2) ){
                     Toast.makeText(AddMatch.this, "Empty credentials!", Toast.LENGTH_SHORT).show();
@@ -75,10 +79,26 @@ public class AddMatch extends AppCompatActivity {
                     finalValQT2TM2 = Integer.parseInt(valQT2TM2);
                     finalValQT3TM2 = Integer.parseInt(valQT3TM2);
                     finalValQT4TM2 = Integer.parseInt(valQT4TM2);
-                    Match match = new Match(txtDateOfMatch,finalValTm1S,finalValTm2S,finalValQT1TM1,finalValQT2TM1,finalValQT3TM1,finalValQT4TM1,finalValQT1TM2,finalValQT2TM2,
+                    Match match = new Match(txtNameTM1,txtNameTM2,txtDateOfMatch,finalValTm1S,finalValTm2S,finalValQT1TM1,finalValQT2TM1,finalValQT3TM1,finalValQT4TM1,finalValQT1TM2,finalValQT2TM2,
                             finalValQT3TM2,finalValQT4TM2,txtOvertime,txtBPTM1,txtBPTM2);
                     databaseHelper.addMatch(match);
                     Toast.makeText(AddMatch.this, "You add a match !", Toast.LENGTH_SHORT).show();
+                    mNameTM1.getText().clear();
+                    mNameTM2.getText().clear();
+                    mDateOfMatch.getText().clear();
+                    mTm1S.getText().clear();
+                    mTm2S.getText().clear();
+                    mQT1TM1.getText().clear();
+                    mQT2TM1.getText().clear();
+                    mQT3TM1.getText().clear();
+                    mQT4TM1.getText().clear();
+                    mQT1TM2.getText().clear();
+                    mQT2TM2.getText().clear();
+                    mQT3TM2.getText().clear();
+                    mQT4TM2.getText().clear();
+                    mOvertime.getText().clear();
+                    mBPTM1.getText().clear();
+                    mBPTM2.getText().clear();
                 }
 
 

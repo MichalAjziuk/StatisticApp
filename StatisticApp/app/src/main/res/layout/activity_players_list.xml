@@ -10,25 +10,25 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit a player"
+        android:text="Choose player"
         android:textStyle="bold"
         android:textSize="30dp"
         android:textColor="@color/white"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="50dp"/>
 
-        <RelativeLayout
-            android:layout_width="300dp"
-            android:layout_height="400dp"
-            android:layout_gravity="center"
-            android:background="@drawable/edit_text_block">
-            <ListView
-                android:id="@+id/lista"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                />
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:background="@drawable/edit_text_block">
+        <ListView
+            android:id="@+id/playerList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
 
-        </RelativeLayout>
+    </RelativeLayout>
 
 
 

@@ -82,14 +82,6 @@ public class SignUp extends AppCompatActivity implements AdapterView.OnItemSelec
             }
         });
 
-        mDeleteDB = findViewById(R.id.deleteDB);
-        mDeleteDB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                databaseHelper.dropTable();
-            }
-        });
-
     }
 
 

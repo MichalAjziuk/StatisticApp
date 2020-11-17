@@ -54,10 +54,10 @@ public class SignIn extends AppCompatActivity {
                         Intent intent = new Intent(SignIn.this, AssistantPanel.class);
                         startActivity(intent);
                     }
+                } else {
+                    Toast.makeText(SignIn.this, "WRONG EMAIL OR PASSWORD ! ", Toast.LENGTH_SHORT).show();
                 }
-                /*Toast.makeText(SignIn.this, "Successfully Login !", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SignIn.this,CoachPanel.class);
-                startActivity(intent);*/
+
             }
         });
 

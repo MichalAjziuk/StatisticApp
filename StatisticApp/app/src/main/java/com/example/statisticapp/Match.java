@@ -1,6 +1,8 @@
 package com.example.statisticapp;
 
 public class Match {
+    private String nameTeam1;
+    private String nameTeam2;
     private String dateOfMatch;
     private int team1score;
     private int team2score;
@@ -18,7 +20,9 @@ public class Match {
 
     Match () {}
 
-    public Match(String dateOfMatch, int team1score, int team2score, int qt1team1, int qt2team1, int qt3team1, int qt4team1, int qt1team2, int qt2team2, int qt3team2, int qt4team2, String overtime, String bpTeam1, String bpTeam2) {
+    public Match(String nameTeam1, String nameTeam2, String dateOfMatch, int team1score, int team2score, int qt1team1, int qt2team1, int qt3team1, int qt4team1, int qt1team2, int qt2team2, int qt3team2, int qt4team2, String overtime, String bpTeam1, String bpTeam2) {
+        this.nameTeam1 = nameTeam1;
+        this.nameTeam2 = nameTeam2;
         this.dateOfMatch = dateOfMatch;
         this.team1score = team1score;
         this.team2score = team2score;
@@ -33,6 +37,22 @@ public class Match {
         this.overtime = overtime;
         this.bpTeam1 = bpTeam1;
         this.bpTeam2 = bpTeam2;
+    }
+
+    public String getNameTeam1() {
+        return nameTeam1;
+    }
+
+    public void setNameTeam1(String nameTeam1) {
+        this.nameTeam1 = nameTeam1;
+    }
+
+    public String getNameTeam2() {
+        return nameTeam2;
+    }
+
+    public void setNameTeam2(String nameTeam2) {
+        this.nameTeam2 = nameTeam2;
     }
 
     public String getDateOfMatch() {

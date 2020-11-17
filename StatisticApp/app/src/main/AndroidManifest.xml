@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListOfMatches"></activity>
-        <activity android:name=".ListOfPlayers" />
+        <activity android:name=".MatchPanel"></activity>
+        <activity android:name=".PlayerPanel" />
+        <activity android:name=".MatchesList" />
+        <activity android:name=".PlayersList" />
+        <activity android:name=".EditPlayerPanel" />
         <activity android:name=".EditPlayer" />
         <activity android:name=".AddPlayerStats" />
         <activity android:name=".AddMatch" />

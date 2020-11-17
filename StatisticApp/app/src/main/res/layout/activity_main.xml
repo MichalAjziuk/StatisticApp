@@ -15,7 +15,8 @@
         <ImageView
             android:layout_width="244dp"
             android:layout_height="202dp"
-            android:src="@mipmap/logo" />
+            android:src="@mipmap/logo"
+            android:layout_marginRight="10dp"/>
 
     </RelativeLayout>
 
